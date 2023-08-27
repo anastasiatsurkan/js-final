@@ -31,68 +31,58 @@ const products = [
     },
 ]
 
+
+
+
 // a
 /*products.forEach(product => {
     console.log(product.name);
 });*/
 
 //b
-/*function addProducts(array) {
-    const productList = [];
+/*const addProduct = (product) => {
+    products.push(product);
+};
 
-    array.forEach(product => {
-        if (!productList.includes(product)) {
-            productList.push(product);
-        };
-    });
+console.log(products);
 
-    return productList;
-}
-console.log(addProducts(["marker"]));
-console.log(addProducts(products));*/
+addProduct({
+    name: "marker",
+    category: "supplies",
+    price: 2,
+    originCountry: { name: "China", code: "CN" },
 
-//c - blocaj
-/*function removeProducts(array) {
-    const productList = [];
+});
 
-    array.forEach(product => {
-            productList.(product);
-    });
+console.log(products);*/
 
-    return productList;
-}
-console.log(removeProducts(["marker"]));
-console.log(removeProducts(products));*/
+//c 
+/*const getProductByName = (name) => {
+    const productIndex = products.findIndex(product => product.name === name);
+
+    if (productIndex !== -1) {
+        products.splice(productIndex, 1);
+    }
+}; 
+
+console.log(products.length);
+getProductByName('milk');
+console.log(products.length);*/
+
 
 //d
-/*function groupByCategory(category) {
-    let group = 0;
+/*const groupByCategory = (category) => {
+    return products.filter(product => product.category === category);
+};
 
-    products.forEach((product) => {
-        if (product.category.includes(product)) {
-            group++;
-        }
-    });
+console.log(groupByCategory('food'));*/
 
-    return group;
-}
+// e 
+/*const groupByCountry = (country) => {
+    return products.filter(product => product.originCountry.name === country);
+};
 
-console.log(groupByCategory("food"));*/
-
-// e - blocaj
-/*function groupByCountry(originCountry) {
-    let group = 0;
-
-    products.forEach((product) => {
-        if (product.originCountry.includes(product)) {
-            group++;
-        }
-    });
-
-    return group;
-}
-
-console.log(groupByCountry("Romania"));*/
+console.log(groupByCountry('China'));*/
 
 //f
 /*function findMostExpensive() {
@@ -125,11 +115,11 @@ console.log(findMostExpensive());*/
 console.log(findTheCheapest());*/
 
 //h
-function findProducts(minPrice, maxPrice) {
+/*function findProductsBetween(minPrice, maxPrice) {
     return products.filter((product) => product.price >= minPrice && product.price <= maxPrice);
 }
 
-console.log(findProducts(3, 10));
+console.log(findProductsBetween(3, 10));*/
 
 
 
